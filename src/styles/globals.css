@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url(./preloader.css);
+
+.card{
+    @apply flex relative flex-col w-[200px] items-center hover:scale-[1.1] hover:duration-200 ease-in bg-slate-800 text-white gap-1 rounded-b-md hover:shadow-xl hover:shadow-indigo-200/10 hover:z-10 border-x border-yellow-200/10 border-b-2
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+.card:hover>img{
+ transform: scale(1.2);
+ transition: all .4s ease-in-out;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.card__title{
+    @apply w-full text-center bg-yellow-400/90 drop-shadow-md shadow-gray-600/20 font-bold text-black/80
+}
+
+.small_title{
+    font-size: 12px;
 }
