@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { CardTypeLinesProps, cardType } from "@/types/types";
 
-interface cardType {
-    name: string;
-    id: number;
-}
 
-const cardTypes: cardType[] = [
+export const cardTypes: cardType[] = [
     {
         name: "Dragons",
         id: 24,
@@ -45,9 +42,7 @@ const cardTypes: cardType[] = [
 
 ];
 
-type CardTypeLinesProps = {
-    cardtype: [number, number];
-};
+
 
 export default function CardTypeLine({ cardtype }: CardTypeLinesProps) {
     const [string, setString] = useState("no type yet");

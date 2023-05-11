@@ -83,7 +83,7 @@ export default function MinionCard({ lang, changeLang }: LangProps) {
 
         return (
             <Layaout lang={lang} changeLang={changeLang}>
-                <div className="flex">
+                <div className="flex flex-wrap">
                     <div className="flex flex-wrap">
                         <img src={card?.battlegrounds.image} alt={card.name} className="w-[400px]" />
                         <img src={goldenCard?.battlegrounds.imageGold} className="w-[400px]" />

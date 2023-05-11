@@ -2,16 +2,17 @@ import Layaout from '@/components/Layaout'
 import Preloader from '@/components/Preloader'
 import React, { useEffect, useState } from 'react'
 import { requestCards } from '@/func/fetch'
-import MinionCard from '@/components/MinionCard'
 import { CardDataInterface, LangProps } from '@/types/types'
+import GaleryCard from '@/components/GaleryCard'
+import { type } from 'os'
 
 
 export default function Cards({ lang, changeLang }: LangProps) {
     const [isLoaded, setIsLoaded] = useState<boolean>(false)
     const [data, setData] = useState<never[] | any[]>([])
-
+    const pagesId = [1, 2, 3, 4, 5]
     useEffect(
-        () => { requestCards(setData, setIsLoaded, lang) }, []
+        () => { requestCards(setData, setIsLoaded, lang, pagesId, 'minion') }, []
     )
 
     if (isLoaded) {
@@ -38,7 +39,13 @@ export default function Cards({ lang, changeLang }: LangProps) {
             <Layaout lang={lang} changeLang={changeLang}>
                 <div className='flex flex-wrap justify-center gap-2 pt-4 pb-10'>
                     {sortCards.map(card =>
-                        <MinionCard title={card.name} image={card.battlegrounds.image} id={card.id} />
+                        <GaleryCard
+                            name={card.name}
+                            image={card.image}
+                            id={card.id}
+                            key={`${card.name}${card.id}`}
+                            type='Cards'
+                        />
                     )}
                 </div>
             </Layaout>
