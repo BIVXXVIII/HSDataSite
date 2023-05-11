@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     const router = useRouter()
     const [lang, SetLang] = useState('ru_RU')
@@ -21,3 +20,4 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
         <Component {...pageProps} lang={lang} changeLang={changeLang} />
     </SessionProvider>
 }
+

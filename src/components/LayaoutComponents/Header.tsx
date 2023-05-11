@@ -41,7 +41,7 @@ export default function Header({ lang, changeLang }: LangProps) {
                     <Link
                         href={'/auth'}
                         key={'userPanel'}
-                        className='px-4 py-2 bg-yellow-400 font-bold rounded-lg text-slate-950'>Login</Link>
+                        className='px-4 py-2 bg-yellow-400 font-bold rounded-lg text-slate-950 hover:text-white hover:scale-110 duration-150'>Login</Link>
 
                 </div>
             </div>
